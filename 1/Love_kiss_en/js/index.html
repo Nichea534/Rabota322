@@ -1,0 +1,123 @@
+read -r -d '' FINAL << EOM
+<!DOCTYPE html>
+<html dir="$site_dir" lang="$LANG" style="" class="no-js">
+   <head>
+      $headcode
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8">
+      <title>${title} - ${sitename}</title>
+           <link rel="icon" href="./image/favicon.svg">
+      <!-- mobile specific metas
+         ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CSS
+         ================================================== -->
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/vendor.css">
+      <!-- script
+         ================================================== -->
+      <script src="js/modernizr.js"></script>
+      <script defer src="js/fontawesome/all.min.js"></script>
+     
+   </head>
+   <body id="top">
+      <!-- preloader
+         ================================================== -->
+      <div id="preloader">
+         <div id="loader"></div>
+      </div>
+      <!-- header
+         ================================================== -->
+      <header class="s-header s-header--blog" style="background-color: $dark_color">
+         <div class="row">
+            <div class="s-header__logo">
+               <a class="logo" href="/" style="color: white">
+            ${sitename}
+            </a>
+            </div>
+            <nav class="s-header__nav">
+               <ul>
+                 <li><a href="/" title="">${menu[0]}</a></li>
+               <li><a href="#" title="">${menu[1]}</a></li>
+               <li><a href="#" title="">${menu[2]}</a></li>
+               <li><a href="#" title="">${menu[3]}</a></li>
+               <li></li>
+               <li> | ${advert_notice}</li>
+               </ul>
+            </nav>
+            <a class="s-header__menu-toggle" href="#0" title="Menu">
+            <span class="s-header__menu-icon"></span>
+            </a>
+         </div>
+         <!-- end row -->
+      </header>
+      <!-- end s-header -->
+      <!-- blog content
+         ================================================== -->
+      <div class="blog-content">
+         <div class="row blog-post-wrap">
+            <div class="column large-12">
+               <article class="blog-post">
+                  <div class="blog-post__header">
+                     <h1 class="blog-post__title">${title}</h1>
+                     <div class="blog-post__meta">
+                        <div class="">$publ_date</div>
+                        <p class="">
+                           <span>$tags</span>
+                           <a href=""><b style="color: black;">#</b>$QUERY</a>
+                        </p>
+                     </div>
+                  </div>
+                  <!-- blog-post__header -->
+                  <div class="blog-post__thumb">
+                     <img src="${image_1}" alt="">
+                  </div>
+                  <!-- blog-post__thumb -->
+                  <div class="blog-post__content">
+                     <p class="lead drop-cap">
+                       ${content}
+                     </p>
+                     
+                  </div>
+                  <!-- end blog-post__content -->
+               </article>
+               <!-- blog post -->
+            </div>
+            <!-- column -->
+         </div>
+         <!-- end blog-post-wrap -->
+      </div>
+      <!-- end blog-content -->
+      <!-- contact
+         ================================================== -->
+      
+      <!-- end s-contact -->
+      <!-- footer
+         ================================================== -->
+      <footer class="s-footer" style="background-color: $dark_color">
+         <div class="row">
+            <div class="column large-7 medium-6 w-1000-stack ss-copyright">
+               <span>
+                  ©<script>document.write(new Date().getFullYear());</script> ${copyright_text} 
+               </span>
+               <span><a href="terms.html">${terms_text}</a> | <a href="privacy.html">${privacy_text}</a></span>
+            </div>
+         </div>
+         <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"/>
+               </svg>
+            </a>
+         </div>
+         <!-- end ss-go-top -->
+      </footer>
+      <!-- Java Script
+         ================================================== -->
+      <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="js/plugins.js"></script>
+      <script src="js/main.js"></script>
+   </body>
+</html>
+EOM
